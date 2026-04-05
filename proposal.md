@@ -2,19 +2,17 @@
 
 ## Title
 
-Ruby YARV Challenge: Build a VM from putobject to Fibonacci
+Build a Working YARV VM in Your Browser
 
 ## Abstract
 
-What if you could build your own YARV VM right in your browser? "Ruby YARV Challenge" (https://yuhi-sato.github.io/ruby-yarv-challenge/) lets you do exactly that—implement a YARV-compatible VM and compiler yourself, step by step, using Ruby.
+"Ruby YARV Challenge" (https://yuhi-sato.github.io/ruby-yarv-challenge/) guides you through seven incremental steps—from pushing a literal onto the stack to running recursive Fibonacci—implementing a YARV-like VM and compiler in Ruby, right in your browser.
 
-You start with a small API surface: stack helpers such as `vm.push` / `vm.pop` and bytecode emission with `iseq.emit(Insn, *args)`—no C toolchain or full CRuby checkout required to begin.
-
-Through seven implementation steps—plus Step 0, an introduction to the YARV stack model—from pushing a literal onto the stack to running recursive Fibonacci, YARV's design decisions become obvious when you build them yourself. Why does YARV store local variables on the same stack as operands, using EP (Environment Pointer) as the base pointer? Why is the call frame stored on the same stack? These "why" questions click when you implement them in Ruby. No installation required—just open the URL and start building.
+Why does YARV store local variables on the same stack as operands, using EP (Environment Pointer) as the base pointer? Why is the call frame on that same stack? These design questions click when you implement them yourself. No C toolchain, no CRuby checkout—just open the URL and start building.
 
 ## For Review Committee Details
 
-This is a 5-minute lightning talk sharing the insights I gained from implementing a YARV-compatible VM in Ruby (the yruby gem), presented through "Ruby YARV Challenge"—a browser-based interactive workshop where attendees can experience the same journey.
+This is a 5-minute lightning talk sharing the insights I gained from implementing a YARV-like VM in Ruby (the yruby gem), presented through "Ruby YARV Challenge"—a browser-based interactive workshop where attendees can experience the same journey.
 
 ### Reliability and first load
 
@@ -64,7 +62,7 @@ Scope note: the workshop is a primer on *what each instruction means* in YARV's 
 ### Outline
 
 1. **(20 sec) Hook:** Show the fib(10) = 55 completion screen—"By the end of this talk, you'll understand how to build this."
-2. **(30 sec) Background:** YARV internals are hard to approach from C source alone. Ruby YARV Challenge lets you learn by building—implement a YARV VM and compiler in Ruby, right in your browser.
+2. **(30 sec) Background:** YARV internals are hard to approach from C source alone. Ruby YARV Challenge lets you learn by building—implement a YARV-like VM and compiler in Ruby, right in your browser.
 3. **(2 min) Walkthrough of key steps:**
    - Step 1 (putobject, 15 sec): The simplest program—push a literal value onto the stack. Quick screen walkthrough showing the 3-pane UI: tutorial → editor → "ALL PASSED."
    - Step 4 (getlocal/setlocal, 1 min 15 sec): The core insight—how YARV stores local variables on the same stack as operands, using EP (Environment Pointer) as the base pointer for access. Show the pointer diagram that makes this non-obvious design decision click.
@@ -88,7 +86,7 @@ Attendees will see how YARV's core architecture can be understood through hands-
 
 - Source repository: https://github.com/Yuhi-Sato/ruby-yarv-challenge — workshop UI and integration (best on desktop or laptop: wide layout and Monaco Editor)
 - ruby.wasm — runs Ruby in the browser via WebAssembly (built by kateinoigakukun)
-- yruby gem — a YARV-compatible VM written in Ruby (my own implementation)
+- yruby gem — a YARV-like VM written in Ruby (my own implementation)
 - Prism — Ruby's official parser (by Kevin Newton)
 - React + TypeScript + Monaco Editor — workshop frontend
 
@@ -101,4 +99,4 @@ Here's why this talk deserves a slot at RubyKaigi 2026:
 3. **Attendees leave with immediate access:** Share a QR code, and anyone in the audience can start building their own VM on the spot—no setup, no dependencies. The tool runs entirely in the browser via ruby.wasm with Prism for parsing.
 4. **The narrative arc** from Step 0 through seven implementation steps—from "push 42" to "fib(10) = 55"—fits a lightning talk: concrete, progressive, and satisfying.
 
-This work builds on Koichi Sasada (ko1)'s YARV architecture, kateinoigakukun's ruby.wasm, and Kevin Newton's Prism parser. My contribution is the integration layer: a YARV-compatible VM (the yruby gem), a Prism-based compiler, and a browser-based progressive curriculum—all wired together so that anyone can build and test a working VM without leaving their browser.
+This work builds on Koichi Sasada (ko1)'s YARV architecture, kateinoigakukun's ruby.wasm, and Kevin Newton's Prism parser. My contribution is the integration layer: a YARV-like VM (the yruby gem), a Prism-based compiler, and a browser-based progressive curriculum—all wired together so that anyone can build and test a working VM without leaving their browser.
