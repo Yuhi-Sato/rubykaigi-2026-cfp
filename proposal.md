@@ -12,11 +12,7 @@ No prior VM knowledge required—each step includes visual tutorials with stack 
 
 ## For Review Committee Details
 
-This is a 5-minute lightning talk sharing the insights I gained from implementing a YARV-like VM in Ruby (the yruby gem), presented through "Ruby YARV Challenge"—a browser-based interactive workshop where attendees can experience the same journey.
-
-### Reliability and first load
-
-The site downloads and initializes `ruby.wasm` on first visit; repeat visits are typically faster because the browser caches the Wasm assets (timing depends on device and network). All demos in the talk itself use pre-recorded video so the 5-minute slot does not depend on venue Wi-Fi; during the session I only show the URL/QR code so attendees can try the workshop on their own connections afterward.
+A 5-minute lightning talk introducing "Ruby YARV Challenge" and the insights behind it.
 
 ### Workshop UI
 
@@ -55,24 +51,17 @@ The screenshots below are representative of the workshop UI. The full curriculum
 
 Fibonacci is the final goal because it requires every concept covered in Steps 1–6: arithmetic, local variables, comparison, control flow, and recursive method dispatch.
 
-Design choice: opt_* instructions are intentionally simplified—no type checks or C function fallback—to keep each step focused on one concept at a time.
-
-Scope note: the workshop is a primer on *what each instruction means* in YARV's bytecode model; it does not reproduce CRuby's full inline caches, guarded deoptimization paths, or production YJIT tuning—those build on this foundation.
-
 ### Outline
 
-1. **(20 sec) Hook:** Show the fib(10) = 55 completion screen—"By the end of this talk, you'll understand how to build this."
-2. **(30 sec) Background:** YARV internals are hard to approach from C source alone. Ruby YARV Challenge lets you learn by building—implement a YARV-like VM and compiler in Ruby, right in your browser.
-3. **(2 min) Walkthrough of key steps:**
-   - Step 1 (putobject, 15 sec): The simplest program—push a literal value onto the stack. Quick screen walkthrough showing the 3-pane UI: tutorial → editor → "ALL PASSED."
-   - Step 4 (getlocal/setlocal, 1 min 15 sec): The core insight—how YARV stores local variables on the same stack as operands, using EP (Environment Pointer) as the base pointer for access. Show the pointer diagram that makes this non-obvious design decision click.
-   - Bridge to Step 7 (30 sec): Once you have arithmetic, locals, comparison, and control flow, you're ready for method dispatch and recursion.
-4. **(1.5 min) The payoff — fib(10) = 55:** Pre-recorded demo of Step 7, where all seven implementation steps come together. Run recursive Fibonacci on the self-built VM, showing the "Congratulations! fib(10) = 55" completion screen.
-5. **(30 sec) Wrap-up + what's next:** These bytecodes are exactly what YJIT takes as input—understanding how each instruction works is the first step toward understanding how Ruby's JIT optimizes them. Share QR code (also displayed on every slide throughout the talk) so attendees can try it after the session—no live workshop run depends on conference Wi-Fi during the talk itself.
+1. **Hook:** Show the fib(10) = 55 completion screen—"By the end of this talk, you'll understand how to build this."
+2. **Background:** YARV internals are hard to approach from C source alone. Ruby YARV Challenge lets you learn by building—implement a YARV-like VM and compiler in Ruby, right in your browser.
+3. **Live walkthrough of key steps:**
+   - Step 1 (putobject): The simplest program—push a literal value onto the stack. Quick screen walkthrough showing the 3-pane UI: tutorial → editor → "ALL PASSED."
+   - Step 4 (getlocal/setlocal): The core insight—how YARV stores local variables on the same stack as operands, using EP (Environment Pointer) as the base pointer for access. Show the pointer diagram that makes this non-obvious design decision click.
+4. **The payoff — fib(10) = 55:** Live demo of Step 7, where all seven implementation steps come together. Run recursive Fibonacci on the self-built VM, showing the "Congratulations! fib(10) = 55" completion screen.
+5. **Wrap-up:** Share QR code so attendees can try it themselves.
 
-All demos use pre-recorded video to ensure reliability within the 5-minute slot.
-
-If rehearsal runs over, trim in this order: compress the Step 1 live walkthrough to a single still image, then shorten the bridge to Step 7—keep Step 4 and the pre-recorded Fibonacci payoff intact.
+The talk may finish under 5 minutes—that's intentional. The goal is to spark curiosity, not fill the slot.
 
 ### Target Audience
 
@@ -80,7 +69,7 @@ Those curious about Ruby internals who find the C source code challenging. No pr
 
 ### Outcome
 
-Attendees will see how YARV's core architecture can be understood through hands-on implementation, and can start building their own VM immediately via the shared URL. For those who want to go deeper, this understanding forms the foundation for reading CRuby's C source or understanding how YJIT optimizes these bytecode sequences.
+Attendees will see how YARV's core architecture can be understood through hands-on implementation, and can start building their own VM immediately via the shared URL. For those who want to go deeper, this understanding forms the foundation for reading CRuby's C source or understanding how JIT optimizes these bytecode sequences.
 
 ### Tech Stack
 
