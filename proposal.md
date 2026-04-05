@@ -2,13 +2,13 @@
 
 ## Title
 
-Build a Working YARV VM in Your Browser
+Ruby YARV Challenge: Build a VM from putobject to fib in Your Browser
 
 ## Abstract
 
-["Ruby YARV Challenge"](https://yuhi-sato.github.io/ruby-yarv-challenge/) guides you through seven incremental steps—from pushing a literal onto the stack to running recursive Fibonacci—implementing a YARV-like VM and compiler in Ruby, right in your browser.
+["Ruby YARV Challenge"](https://yuhi-sato.github.io/ruby-yarv-challenge/) is a browser-based workshop where you implement a YARV-like VM and compiler in Ruby, step by step. All seven steps build toward one goal: running recursive Fibonacci on your own VM. Powered by ruby.wasm, with Prism as the parser, everything runs in the browser. 
 
-Why does YARV store local variables on the same stack as operands, using EP (Environment Pointer) as the base pointer? Why is the call frame on that same stack? These design questions click when you implement them yourself. No C toolchain, no CRuby checkout—just open the URL and start building.
+No prior VM knowledge required, no install needed—just open the URL and enjoy building your own VM!
 
 ## For Review Committee Details
 
@@ -94,7 +94,7 @@ Attendees will see how YARV's core architecture can be understood through hands-
 
 Here's why this talk deserves a slot at RubyKaigi 2026:
 
-1. **YARV's design decisions become obvious when you build it yourself.** Why does YARV store local variables on the same stack as operands, using EP as the base pointer? Why is the call frame on that same stack? These "why" questions only clicked for me when I implemented them in my own VM (the yruby gem). This talk distills those moments of insight into a 5-minute journey.
+1. **The stack layout makes sense in motion, not just on paper.** Locals on the operand stack with EP as the base pointer, frames on the same stack—that is the kind of description you can repeat without *seeing* it run. Implementing those pieces in my own VM (the yruby gem) turned that model into something I could step through; this talk distills that shift into a 5-minute journey.
 2. **A complement to existing resources:** ko1's talks and Ruby Under a Microscope explain YARV's *what*. This tool adds the *how*: building a VM yourself in Ruby—the language you already know—is a fundamentally different and more accessible learning path.
 3. **Attendees leave with immediate access:** Share a QR code, and anyone in the audience can start building their own VM on the spot—no setup, no dependencies. The tool runs entirely in the browser via ruby.wasm with Prism for parsing.
 4. **The narrative arc** from Step 0 through seven implementation steps—from "push 42" to "fib(10) = 55"—fits a lightning talk: concrete, progressive, and satisfying.
