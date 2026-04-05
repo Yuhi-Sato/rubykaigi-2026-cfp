@@ -6,7 +6,7 @@ Build a Working YARV VM in Your Browser
 
 ## Abstract
 
-"Ruby YARV Challenge" (https://yuhi-sato.github.io/ruby-yarv-challenge/) guides you through seven incremental steps—from pushing a literal onto the stack to running recursive Fibonacci—implementing a YARV-like VM and compiler in Ruby, right in your browser.
+["Ruby YARV Challenge"](https://yuhi-sato.github.io/ruby-yarv-challenge/) guides you through seven incremental steps—from pushing a literal onto the stack to running recursive Fibonacci—implementing a YARV-like VM and compiler in Ruby, right in your browser.
 
 Why does YARV store local variables on the same stack as operands, using EP (Environment Pointer) as the base pointer? Why is the call frame on that same stack? These design questions click when you implement them yourself. No C toolchain, no CRuby checkout—just open the URL and start building.
 
