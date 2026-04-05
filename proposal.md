@@ -8,7 +8,7 @@ Ruby YARV Challenge: Build a VM from putobject to fib in Your Browser
 
 ["Ruby YARV Challenge"](https://yuhi-sato.github.io/ruby-yarv-challenge/) is a browser-based workshop where you implement a YARV-like VM and compiler in Ruby, step by step. All seven steps build toward one goal: running recursive Fibonacci on your own VM. Powered by ruby.wasm, with Prism as the parser, everything runs in the browser. 
 
-No prior VM knowledge required, no install needed—just open the URL and enjoy building your own VM!
+No prior VM knowledge required—each step includes visual tutorials with stack diagrams and detailed hints, so you can learn as you build. No install needed—just open the URL and enjoy building your own VM!
 
 ## For Review Committee Details
 
