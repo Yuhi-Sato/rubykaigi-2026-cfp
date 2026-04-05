@@ -22,20 +22,20 @@ The tool provides a 3-pane interface:
 - **Right (Results):** Expected vs. actual bytecode disassembly, test results with pass/fail indicators, and progression to next step
 
 #### Step 0 — Introduction: What is YARV?
-![Step 0: Introduction — stack model and iseq explanation](https://raw.githubusercontent.com/Yuhi-Sato/cfp/main/rubykaigi/lt/images/step0-introduction.png)
+![Step 0: Introduction — stack model and iseq explanation](https://raw.githubusercontent.com/Yuhi-Sato/rubykaigi-2026-cfp/main/images/step0-introduction.png)
 
 #### Step 1 — putobject: Push Literals onto the Stack (completed)
-![Step 1: putobject — 3-pane UI with ALL PASSED](https://raw.githubusercontent.com/Yuhi-Sato/cfp/main/rubykaigi/lt/images/step1-putobject-passed.png)
+![Step 1: putobject — 3-pane UI with ALL PASSED](https://raw.githubusercontent.com/Yuhi-Sato/rubykaigi-2026-cfp/main/images/step1-putobject-passed.png)
 
 #### Step 2 — opt_plus: Arithmetic (before / after)
-![Step 2: Addition — TODO state before implementation](https://raw.githubusercontent.com/Yuhi-Sato/cfp/main/rubykaigi/lt/images/step2-addition-todo.png)
-![Step 2: Addition — ALL PASSED after implementation](https://raw.githubusercontent.com/Yuhi-Sato/cfp/main/rubykaigi/lt/images/step2-addition-passed.png)
+![Step 2: Addition — TODO state before implementation](https://raw.githubusercontent.com/Yuhi-Sato/rubykaigi-2026-cfp/main/images/step2-addition-todo.png)
+![Step 2: Addition — ALL PASSED after implementation](https://raw.githubusercontent.com/Yuhi-Sato/rubykaigi-2026-cfp/main/images/step2-addition-passed.png)
 
 #### Step 4 — getlocal/setlocal: Local Variables with EP pointer diagram
-![Step 4: Local Variables — SP/EP pointer diagram and editor](https://raw.githubusercontent.com/Yuhi-Sato/cfp/main/rubykaigi/lt/images/step4-local-variables.png)
+![Step 4: Local Variables — SP/EP pointer diagram and editor](https://raw.githubusercontent.com/Yuhi-Sato/rubykaigi-2026-cfp/main/images/step4-local-variables.png)
 
 #### Step 7 — fib(10) = 55: The Final Goal
-![Step 7: Fibonacci complete — Congratulations! fib(10) = 55](https://raw.githubusercontent.com/Yuhi-Sato/cfp/main/rubykaigi/lt/images/step7-fibonacci-complete.png)
+![Step 7: Fibonacci complete — Congratulations! fib(10) = 55](https://raw.githubusercontent.com/Yuhi-Sato/rubykaigi-2026-cfp/main/images/step7-fibonacci-complete.png)
 
 ### Outline
 
