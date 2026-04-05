@@ -81,11 +81,7 @@ Attendees will see how YARV's core architecture can be understood through hands-
 
 ## For Review Committee Pitch
 
-Here's why this talk deserves a slot at RubyKaigi 2026:
-
-1. **The stack layout makes sense in motion, not just on paper.** Locals on the operand stack with EP as the base pointer, frames on the same stack—that is the kind of description you can repeat without *seeing* it run. Implementing those pieces in my own VM (the yruby gem) turned that model into something I could step through; this talk distills that shift into a 5-minute journey.
-2. **A complement to existing resources:** ko1's talks and Ruby Under a Microscope explain YARV's *what*. This tool adds the *how*: building a VM yourself in Ruby—the language you already know—is a fundamentally different and more accessible learning path.
-3. **Attendees leave with immediate access:** Share a QR code, and anyone in the audience can start building their own VM on the spot—no setup, no dependencies. The tool runs entirely in the browser via ruby.wasm with Prism for parsing.
-4. **The narrative arc** from Step 0 through seven implementation steps—from "push 42" to "fib(10) = 55"—fits a lightning talk: concrete, progressive, and satisfying.
-
-This work builds on Koichi Sasada (ko1)'s YARV architecture, kateinoigakukun's ruby.wasm, and Kevin Newton's Prism parser. My contribution is the integration layer: a YARV-like VM (the yruby gem), a Prism-based compiler, and a browser-based progressive curriculum—all wired together so that anyone can build and test a working VM without leaving their browser.
+1. **Written in Ruby, for Rubyists.** YARV's internals are usually explained through C source. By reimplementing the bytecode VM and compiler in Ruby, this workshop lets Rubyists understand YARV's design decisions in the language they already think in—a hands-on complement to resources like *Ruby Under a Microscope*.
+2. **Focus on what matters.** The workshop strips away everything except bytecode execution and compilation—the most interesting parts of YARV's architecture—so participants can concentrate on the core concepts without getting lost in C-level details.
+3. **Rich guidance at every step.** Each step includes stack diagrams, EP/SP pointer layouts, progressive hints, and immediate test feedback—so even attendees with no VM background can work through the challenge on their own.
+4. **It works today.** This is not a concept or a work-in-progress. The tool is live, the curriculum is complete, and I can demo it on stage.
